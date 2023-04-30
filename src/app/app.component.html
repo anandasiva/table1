@@ -1,0 +1,41 @@
+<h1>{{title}}</h1>
+<div class= "card">
+  <div class="card-header">
+    <p>STUDENTS LIST</p>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Native</th>  
+      <th>Age</th>
+      <th>Degree</th>
+      <th>Experience</th>
+      <th>Remove</th>
+      <th>Save Details</th>
+      </tr>
+    </thead>   
+   <tbody>
+    <tr *ngFor="let student of students;let i= index;trackBy:trackByFn;">
+      <td>{{student.name}}</td>
+      <td>{{student.native}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.degree}}</td>
+      <td>{{student.experience}}</td>
+      <td><button (click)="remove(i)">remove</button></td>
+      <td><button (click) ="save()">save</button><br></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+Name:<input type="text"[(ngModel)]="sName">
+Native:<input type="text"[(ngModel)]="sNative">
+Age:<input type="text"[(ngModel)]="sAge">
+Department:<input type="text"[(ngModel)]="sDegree">
+Experience:<input type="text"[(ngModel)]="sExperience">
+<button (click) ="addStudent()">Add</button><br>
