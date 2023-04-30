@@ -35,10 +35,6 @@ save(){
   console.log(this.students);
 }
 
-
-
-
-
 }
 
 class student{
